@@ -1,0 +1,19 @@
+@use "@carbon/layout";
+@use "@carbon/type";
+@use "@carbon/grid";
+@use "~/app/styles/variables";
+
+.feature-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  @include grid.breakpoint-down(lg) {
+    padding-inline: initial;
+  }
+
+  @include grid.breakpoint-down(md) {
+    padding-inline: initial;
+  }
+}

@@ -1,0 +1,29 @@
+@use "@carbon/layout";
+@use "@carbon/type";
+@use "@carbon/grid";
+@use "~/app/styles/variables";
+
+.page {
+  &__link {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: currentColor;
+    padding: layout.$spacing-05;
+
+    svg {
+      display: none;
+
+      @include grid.breakpoint-down(md) {
+        display: inline;
+      }
+    }
+
+    &:hover {
+      svg {
+        display: inline;
+      }
+    }
+  }
+}

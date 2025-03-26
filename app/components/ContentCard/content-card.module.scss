@@ -1,0 +1,102 @@
+@use "@carbon/layout";
+@use "@carbon/grid";
+@use "@carbon/type";
+@use "../../styles/variables";
+
+.content-card {
+  border-top: 1px solid transparent;
+  border-left: 1px solid variables.$light-gray;
+  padding: layout.$spacing-06 layout.$spacing-05 layout.$spacing-09
+    layout.$spacing-05;
+  color: variables.$black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  height: 100%;
+
+  &--mobile {
+    display: none;
+
+    @include grid.breakpoint-down(lg) {
+      border-left: none;
+      border-top: 1px solid variables.$light-gray;
+      padding: layout.$spacing-06 layout.$spacing-05 layout.$spacing-08
+        layout.$spacing-05;
+      color: variables.$black;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &--alt {
+    background-color: variables.$black-hover;
+    border-top: 1px solid variables.$light-gray;
+    padding: layout.$spacing-06 layout.$spacing-05 layout.$spacing-08
+      layout.$spacing-05;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+    height: 100%;
+
+    * {
+      color: variables.$white !important;
+    }
+
+    &:hover {
+      background-color: variables.$black;
+      transition: all 0.2s ease;
+      border-top: 1px solid variables.$accent-hover;
+
+      @include grid.breakpoint-down(lg) {
+        background-color: variables.$black-hover;
+        border-top: 1px solid variables.$light-gray;
+      }
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: layout.$spacing-07;
+    }
+
+    li {
+      @include type.type-style("body-02");
+    }
+  }
+
+  svg {
+    fill: variables.$gray;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin-top: layout.$spacing-03;
+    color: variables.$gray;
+  }
+
+  &__title {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__description {
+    max-width: 32rem;
+  }
+
+  &:hover {
+    background-color: variables.$white-hover;
+    transition: all 0.2s ease;
+    border-top: 1px solid variables.$accent-hover;
+    border-left: 1px solid transparent;
+
+    svg {
+      fill: variables.$black;
+    }
+  }
+
+  @include grid.breakpoint-down(lg) {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+@use "@carbon/layout";
+@use "../../styles/variables";
+
+.back-to-top {
+  &:global(.cds--css-grid-column) {
+    margin-inline: auto;
+  }
+
+  &:global(.cds--btn--secondary) {
+    background-color: variables.$accent;
+
+    &:hover {
+      background-color: variables.$accent-hover;
+    }
+
+    &:focus {
+      border-color: transparent;
+      box-shadow: initial;
+    }
+  }
+
+  svg {
+    fill: white;
+  }
+}

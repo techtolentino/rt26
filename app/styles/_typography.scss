@@ -1,0 +1,59 @@
+@use "@carbon/type";
+@use "@carbon/colors";
+@use "@carbon/layout";
+@use "@carbon/grid";
+@use "~/app/styles/variables";
+
+* {
+  @include type.type-style("body-01");
+  color: variables.$black;
+}
+
+h1 {
+  @include type.type-style("fluid-display-03", true);
+  padding-bottom: layout.$spacing-06;
+}
+
+h2 {
+  @include type.type-style("fluid-heading-05", true);
+  padding-bottom: layout.$spacing-05;
+}
+
+h3 {
+  @include type.type-style("fluid-heading-04", true);
+  padding-bottom: layout.$spacing-05;
+}
+
+h4 {
+  @include type.type-style("fluid-heading-03", true);
+}
+
+h5 {
+  color: variables.$gray;
+}
+
+p {
+  @include type.type-style("body-01");
+}
+
+ul {
+  margin: layout.$spacing-03 0;
+}
+
+.text-link {
+  color: variables.$accent;
+  text-decoration: none;
+
+  &:hover {
+    color: variables.$accent-hover;
+    text-decoration: underline;
+  }
+}
+
+strong {
+  color: variables.$gray;
+}
+
+a {
+  text-decoration: none;
+}

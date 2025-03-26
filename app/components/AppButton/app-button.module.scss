@@ -1,0 +1,38 @@
+@use "@carbon/colors";
+@use "~/app/styles/variables";
+
+.app-button {
+  &--primary {
+    background-color: variables.$black-hover;
+
+    &:hover {
+      background-color: variables.$black;
+    }
+
+    * {
+      fill: variables.$white !important;
+      color: variables.$white !important;
+    }
+  }
+
+  &--secondary {
+    background-color: variables.$accent !important;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: variables.$accent-hover !important;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    * {
+      fill: variables.$white !important;
+      color: variables.$white !important;
+    }
+  }
+}

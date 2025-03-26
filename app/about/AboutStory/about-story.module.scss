@@ -1,0 +1,26 @@
+@use "@carbon/layout";
+@use "@carbon/grid";
+
+.about-story {
+  margin-bottom: layout.$spacing-10;
+  &__copy {
+    margin-bottom: layout.$spacing-05;
+  }
+
+  &__img-grid {
+    @include grid.breakpoint-down(md) {
+      padding-inline: layout.$spacing-05;
+      gap: layout.$spacing-05;
+    }
+  }
+
+  &__list {
+    padding-left: layout.$spacing-06;
+
+    li {
+      list-style-type: disc;
+      line-height: 1.4;
+      padding-bottom: layout.$spacing-02;
+    }
+  }
+}

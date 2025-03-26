@@ -1,0 +1,129 @@
+@use "@carbon/layout";
+@use "@carbon/type";
+@use "@carbon/grid";
+@use "~/app/styles/variables";
+
+.feature-card {
+  &__container {
+    display: grid;
+    align-items: flex-end;
+    padding-bottom: layout.$spacing-10;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    min-height: 60rem;
+    transition: background-image 0.2s ease;
+
+    @include grid.breakpoint-down(lg) {
+      min-height: 38rem;
+      padding-bottom: layout.$spacing-09;
+      padding-inline: initial;
+    }
+
+    @include grid.breakpoint-down(md) {
+      background-image: url("../../public/images/ny-x-rohit-tandon-bw-mobile.png") !important;
+      align-items: initial;
+      padding-bottom: 0;
+      padding-top: layout.$spacing-10;
+      background-position: 0 0;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    color: variables.$white;
+    @include grid.breakpoint-down(md) {
+      color: variables.$black;
+
+      svg {
+        fill: variables.$black;
+      }
+    }
+  }
+
+  &__content {
+    padding: 0 layout.$spacing-05;
+
+    @include grid.breakpoint-down(md) {
+      padding: 0;
+    }
+
+    &-description {
+      color: variables.$white;
+      margin-bottom: layout.$spacing-07;
+
+      @include grid.breakpoint-down(md) {
+        color: variables.$black;
+      }
+    }
+  }
+
+  &-secondary {
+    padding: 0;
+    min-height: 60rem;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    transition: background-image 0.2s ease;
+    display: grid;
+    align-items: flex-end;
+    color: variables.$white;
+    text-decoration: none;
+    padding-left: layout.$spacing-08;
+    padding-bottom: layout.$spacing-10;
+
+    @include grid.breakpoint-down(lg) {
+      min-height: 44rem;
+      padding-bottom: layout.$spacing-09;
+      padding-left: layout.$spacing-05;
+    }
+
+    &__link {
+      display: inline-block;
+      color: variables.$white;
+      text-decoration: none;
+
+      &-title {
+        display: inline-grid;
+        align-items: flex-end;
+        color: variables.$white;
+        max-width: 44rem;
+
+        @include grid.breakpoint-down(lg) {
+          max-width: 20rem;
+        }
+      }
+
+      &-subtitle {
+        color: variables.$white;
+        opacity: 0.5;
+        transition: opacity 0.2s ease;
+        @include grid.breakpoint-down(lg) {
+          opacity: 1;
+        }
+      }
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+        fill: variables.$accent;
+      }
+
+      &:hover {
+        .feature-card-secondary__link-subtitle {
+          opacity: 1;
+        }
+
+        svg {
+          fill: variables.$white;
+        }
+      }
+    }
+
+    &__col {
+      margin-inline: initial;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use "@carbon/type";
+@use "@carbon/grid";
+@use "@carbon/layout";
+@use "~/app/styles/variables";
+
+.home-experience {
+  padding-top: layout.$spacing-12;
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    &-grid {
+      margin-top: layout.$spacing-08;
+      gap: layout.$spacing-05;
+
+      @include grid.breakpoint-down(md) {
+        padding: 0 layout.$spacing-05;
+      }
+    }
+
+    &-tile {
+      outline: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    &-tile--active {
+      outline: 1px solid variables.$black;
+      transition: all 0.2s ease;
+    }
+
+    &-tile--inactive {
+      outline: 1px solid transparent;
+      opacity: 0.5;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    text-decoration: underline;
+
+    &:hover {
+      color: variables.$accent;
+      cursor: pointer;
+    }
+
+    &--active {
+      color: variables.$accent;
+      display: inline-block;
+      text-decoration: underline;
+    }
+  }
+}

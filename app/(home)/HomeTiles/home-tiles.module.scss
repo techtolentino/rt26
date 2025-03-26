@@ -1,0 +1,68 @@
+@use "@carbon/layout";
+@use "@carbon/grid";
+@use "@carbon/type";
+@use "~/app/styles/variables";
+
+.home-tiles {
+  padding: 0;
+
+  &__item {
+    min-height: 40rem;
+    margin: 0;
+
+    &:first-of-type {
+      background: url("../../public/images/qiskit_imac.png") bottom center
+        no-repeat;
+      background-size: cover;
+      background-color: variables.$light-gray;
+      color: variables.$black;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: variables.$light-gray-hover;
+      }
+    }
+
+    &:last-of-type {
+      color: variables.$white;
+      background: url("../../public/images/writing.png") bottom center no-repeat;
+      background-size: cover;
+      background-color: variables.$accent;
+      transition: background-color 0.2s ease, background-image 2s;
+
+      &:hover {
+        background-color: variables.$accent-hover;
+      }
+
+      h3 {
+        color: variables.$white;
+      }
+
+      svg {
+        fill: variables.$white;
+      }
+    }
+
+    @include grid.breakpoint-down(md) {
+      min-height: 22rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: currentColor;
+    padding: layout.$spacing-05 layout.$spacing-09;
+
+    @include grid.breakpoint-down(lg) {
+      padding: layout.$spacing-05 layout.$spacing-07;
+    }
+
+    @include grid.breakpoint-down(md) {
+      padding: layout.$spacing-05;
+    }
+  }
+}

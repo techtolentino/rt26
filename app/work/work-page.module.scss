@@ -1,0 +1,125 @@
+@use "@carbon/colors";
+@use "@carbon/layout";
+@use "@carbon/grid";
+@use "@carbon/type";
+@use "../../app/styles/variables";
+
+.work-page {
+  &__title-container {
+    @include grid.breakpoint-down(md) {
+      padding-right: layout.$spacing-07;
+    }
+  }
+
+  &__hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__section {
+    padding-bottom: layout.$spacing-10;
+
+    &--alt {
+      padding-top: layout.$spacing-10;
+      padding-bottom: layout.$spacing-10;
+      margin-bottom: layout.$spacing-10;
+      background-color: variables.$light-gray;
+    }
+  }
+
+  &__p {
+    margin-bottom: layout.$spacing-05;
+
+    & + h5 {
+      margin-top: layout.$spacing-07;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: layout.$spacing-05;
+    border: 1px solid variables.$light-gray;
+
+    &-container {
+      padding: layout.$spacing-06;
+      outline: 1px solid variables.$light-gray;
+
+      img {
+        margin: 0;
+        border: initial;
+      }
+    }
+
+    &-caption {
+      margin-top: layout.$spacing-05;
+      margin-bottom: layout.$spacing-03;
+      font-style: italic;
+      font-size: small;
+    }
+
+    &-tile {
+      :hover {
+        border: 1px solid variables.$black;
+        opacity: 0.9;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__list {
+    padding-left: layout.$spacing-06;
+
+    li {
+      list-style-type: disc;
+      line-height: 1.4;
+      padding-bottom: layout.$spacing-02;
+    }
+  }
+
+  &__custom-list {
+    padding-top: layout.$spacing-03;
+    li {
+      @include type.type-style("body-02");
+      display: flex;
+      padding-bottom: layout.$spacing-02;
+    }
+
+    &__issue {
+      color: variables.$accent;
+      font-weight: 600;
+      display: block;
+      margin-right: layout.$spacing-02;
+    }
+
+    &__check {
+      color: colors.$green-40;
+      font-weight: 600;
+      display: block;
+      margin-right: layout.$spacing-02;
+    }
+
+    &__plus {
+      font-weight: 600;
+      display: block;
+      margin-right: layout.$spacing-02;
+    }
+
+    &__copy {
+      display: block;
+    }
+  }
+
+  &__aside {
+    p {
+      @include type.type-style("body-02");
+    }
+
+    &-title {
+      margin-bottom: layout.$spacing-03;
+    }
+  }
+}

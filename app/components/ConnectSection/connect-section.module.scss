@@ -1,0 +1,16 @@
+@use "@carbon/layout";
+@use "../../styles/variables";
+
+.connect-section {
+  position: relative;
+  border-top: 1px solid variables.$light-gray;
+  padding-top: layout.$spacing-10;
+
+  &__link {
+    color: variables.$accent;
+
+    &:hover {
+      color: variables.$accent-hover;
+    }
+  }
+}

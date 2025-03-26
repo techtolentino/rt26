@@ -1,0 +1,80 @@
+@use "@carbon/layout";
+@use "@carbon/grid";
+@use "../../styles/variables";
+
+@mixin tile-styles {
+  position: relative;
+  margin-inline: initial;
+  min-height: 40rem;
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  padding: layout.$spacing-07;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: opacity 0.2s ease;
+
+  @include grid.breakpoint-down(md) {
+    min-height: 28rem;
+  }
+}
+
+.writing-feature {
+  &__tile {
+    @include tile-styles();
+
+    @include grid.breakpoint-down(md) {
+      padding: layout.$spacing-07 layout.$spacing-05;
+    }
+
+    &--dark {
+      @include tile-styles();
+
+      * {
+        color: variables.$white;
+      }
+    }
+
+    &-group {
+      position: relative;
+      padding: 0;
+    }
+
+    &-title {
+      max-width: 16rem;
+
+      @include grid.breakpoint-down(md) {
+        max-width: 12rem;
+      }
+    }
+
+    &-icon {
+      fill: variables.$accent;
+    }
+
+    &-link {
+      color: currentColor;
+      text-decoration: none;
+
+      &:hover {
+        .writing-feature__tile-byline {
+          transition: opacity 0.2s ease;
+          opacity: 1;
+        }
+
+        .writing-feature__tile-icon {
+          fill: currentColor;
+        }
+      }
+    }
+
+    &-byline {
+      opacity: 0.5;
+
+      @include grid.breakpoint-down(lg) {
+        opacity: 1;
+      }
+    }
+  }
+}

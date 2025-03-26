@@ -1,0 +1,30 @@
+@use "@carbon/layout";
+@use "@carbon/colors";
+@use "@carbon/grid";
+@use "~/app/styles/variables";
+
+.page-section {
+  &--lg {
+    padding: calc(layout.$spacing-13 + layout.$spacing-10) 0;
+
+    @include grid.breakpoint-down(lg) {
+      padding: layout.$spacing-12 0;
+    }
+  }
+
+  &--md {
+    padding: layout.$spacing-12 0;
+
+    @include grid.breakpoint-down(lg) {
+      padding: layout.$spacing-11 0;
+    }
+  }
+
+  &--sm {
+    padding: layout.$spacing-07 0;
+
+    @include grid.breakpoint-down(lg) {
+      padding: layout.$spacing-05 0;
+    }
+  }
+}
