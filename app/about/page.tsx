@@ -14,10 +14,6 @@ export default function About() {
   return (
     <>
       <PageSection>
-        <AboutHero />
-      </PageSection>
-      <AboutStory />
-      <PageSection variant="md">
         <ConnectSection />
       </PageSection>
     </>

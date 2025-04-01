@@ -19,10 +19,6 @@ export default function Work() {
   return (
     <>
       <PageSection>
-        <WorkHero />
-      </PageSection>
-      <WorkGrid />
-      <PageSection variant="md">
         <ConnectSection />
       </PageSection>
     </>

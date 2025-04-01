@@ -13,10 +13,6 @@ export default function Writing() {
   return (
     <>
       <PageSection>
-        <WritingHero />
-      </PageSection>
-      <WritingFeature />
-      <PageSection variant="md">
         <ConnectSection />
       </PageSection>
     </>
